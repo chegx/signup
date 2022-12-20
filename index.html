@@ -27,17 +27,17 @@
     </div>
 
     <form name="form" novalidate autocomplete="off">
-      <input type="text" name="fname" required placeholder="First Name">
-      <i></i>
+      <input type="text" name="fname" required placeholder="First Name" aria-describedby="fname-error">
+      <i id="fname-error"></i>
 
-      <input type="text" name="lname" required placeholder="Last Name">
-      <i></i>
+      <input type="text" name="lname" required placeholder="Last Name" aria-describedby="lname-error">
+      <i id="lname-error"></i>
 
-      <input type="email" name="email" required placeholder="Email Address">
-      <i></i>
+      <input type="email" name="email" required placeholder="Email Address" aria-describedby="email-error">
+      <i id="email-error"></i>
 
-      <input type="password" name="psw" required placeholder="Password">
-      <i></i>
+      <input type="password" name="psw" required placeholder="Password" aria-describedby="psw-error">
+      <i id="psw-error"></i>
 
       <button type="submit" name="button">Claim your free trial</button>
 
