@@ -8,6 +8,10 @@ document.forms['form'].addEventListener('submit', e => {
     if (inp.value === '') {
       inp.classList.add('fail');
       inp.nextElementSibling.innerHTML = inp.placeholder + ' cannot be empty';
+    } else if (inp.type = 'email' && !validateEmail(inpEmail.value) && inpEmail.value !== '') {
+      inpEmail.classList.add('fail');
+      inpEmail.nextElementSibling.innerHTML = 'Looks like this is not an email';
+      inpEmail.nextElementSibling.style.display = 'inline';
     } else {
       inp.classList.remove('fail');
       inp.nextElementSibling.innerHTML = ''
@@ -15,16 +19,7 @@ document.forms['form'].addEventListener('submit', e => {
     }
   });
 
-  if (!validateEmail(inpEmail.value) && inpEmail.value !== '') {
-    inpEmail.classList.add('fail');
-    inpEmail.nextElementSibling.innerHTML = 'Looks like this is not an email';
-    inpEmail.nextElementSibling.style.display = 'inline';
-  } else if (validateEmail(inpEmail.value)) {
-    inpEmail.classList.remove('fail');
-    x++;
-  }
-
-  if (x === 5) {
+  if (x === 4) {
     document.body.classList.add('success');
     document.querySelector('header').innerHTML = 'Thank you!';
   }
